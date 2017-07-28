@@ -18,7 +18,7 @@ end
   # GET /marks/1
   # GET /marks/1.json
   def show
-
+   # marks show action
   end
 
   # GET /marks/new
