@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <h3>Students</h3>
+    <div class="column">
+      <table class="table">
+      <% if @students.present? %>
+        <tbody>
+          <% @students.each do |student| %>
+
+          <h3 class="posted-view">marks <%= student.marks%></h3>
+        
+          <% end %>
+        </tbody>
+        <% else %>
+      <h2> No marks found </h2>
+      <% end %>
+      </table>
+    </div>
+  </div>
+</div>

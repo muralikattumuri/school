@@ -1,0 +1,24 @@
+<h3>student</h3>
+<p>Email: <%= @user.email if @user.email %></p>
+
+
+
+
+
+ <% if @marks.present? %>
+        <tbody>
+          <% @marks.each do |mark| %>
+          <h3 class="posted-view">subject1:<%= mark.subject1%></h3>
+           <h3 class="posted-view">subject2:<%= mark.subject2%></h3>
+            <h3 class="posted-view">subject3:<%= mark.subject3%></h3>
+        
+            <h3 class="posted-view">Total Marks:<%= mark.total_marks%></h3>
+            <%= link_to 'edit', edit_mark_path %>
+
+       <% end %>
+       <% else %>
+       <h2> no marks found </h2>
+       <%= link_to 'Add marks', new_mark_path(user_id: @user.id) %>
+       <% end %>
+
+ 

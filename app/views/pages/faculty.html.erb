@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <h3>Faculty</h3>
+    <div class="column">
+      <table class="table">
+      <% if @faculty.present? %>
+        <tbody>
+          <% @faculty.each do |faculty| %>
+          <h3 class="posted-view">email <%= faculty.email%></h3>
+            
+          <% end %>
+        </tbody>
+        <% else %>
+      <h2> No faculty found </h2>
+      <% end %>
+      </table>
+    </div>
+  </div>
+</div>

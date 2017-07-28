@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Marks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>user_id</th>
+      <th>Subject1</th>
+      <th>Subject2</th>
+      <th>Subject3</th>
+      <th>total</th>
+       <th>percentage</th>
+       <th>avg_marks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @marks.each do |mark| %>
+      <tr>
+        <td><%= mark.user_id %></td>
+        <td><%= mark.subject1 %></td>
+        <td><%= mark.subject2 %></td>
+        <td><%= mark.subject3 %></td>
+        <td><%= mark.total_marks %></td>
+        <td><%= mark.percentage %></td>
+         <td><%= mark.avg_marks %></td>
+         <p>
+        
+        </p>
+   
+
+        <% if current_user.principal? || current_user.faculty? %>
+
+        <td><%= link_to 'Show', mark %></td>
+        <td><%= link_to 'Edit', edit_mark_path(mark) %></td>
+        <td><%= link_to 'Destroy', mark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+            <td><%= link_to 'Show', mark %></td>
+
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

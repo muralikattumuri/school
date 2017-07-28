@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <h3>years</h3>
+    <div class="column">
+      <table class="table">
+      <% if @students.present? %>
+  
+        <tbody>
+          <% @students.each do |student| %>
+          <h3 class="posted-view">year <%= student.email%></h3>
+
+           <%= link_to 'Show', student %>
+        <%= link_to 'Edit', edit_user_path(student) %>
+        <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %>
+                       
+          <% end %>
+        </tbody>
+        <% else %>
+      <h2> No students found </h2>
+      <% end %>
+      </table>
+
+    <div class="container">
+  <div class="row">
+    <h3>Marks</h3>
+    <div class="column">
+      <table class="table">
+       <p id="notice"><%= notice %></p>
+
+
+</div>
+<% @marks.each do |element| %>
+   <% element.each do |mark| %>
+   <tbody>
+   <tr>
+
+   <th><h3 class="posted-view">subject1 </th> <%= mark.subject1%></h3></th>
+   <th><h3 class="posted-view">subject2 </th><%= mark.subject2%></h3></th>
+   <th><h3 class="posted-view">subject3 </th></tr><%= mark.subject3%></h3></th>
+
+ <td><h3 class="posted-view">Total <%= mark.total_marks%></h3></td>
+ <td><h3 class="posted-view">Percentage <%= mark.percentage%></h3></td>
+</tr>
+  <% end %>
+<% end %>
+</tbody>
+</table>

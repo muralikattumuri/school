@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <h3>Students</h3>
+    <div class="column">
+      <table class="table">
+      <% if @students.present? %>
+  
+        <tbody>
+          <% @students.each do |student| %>
+          <h3 class="posted-view">email <%= student.email%></h3>
+
+            <h3 class="posted-view"> year:<%= student.year%></h3>
+
+           <%= link_to 'Show', student %>
+        <%= link_to 'Edit', edit_user_path(student) %>
+        <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %>
+                       
+          <% end %>
+        </tbody>
+        <% else %>
+      <h2> No students found </h2>
+      <% end %>
+      </table>
+ 
+  
+ 

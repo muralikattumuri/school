@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  standard: 1
+  user: one
+
+two:
+  standard: 1
+  user: two
