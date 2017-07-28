@@ -18,7 +18,8 @@ end
   # GET /marks/1
   # GET /marks/1.json
   def show
-   # marks show action
+   # marks show action dited by suresh
+  #dvmcvxcnvicxnvicxivncixvni
   end
 
   # GET /marks/new
